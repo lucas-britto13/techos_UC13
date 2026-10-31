@@ -1,17 +1,25 @@
 package br.com.bugnacio.techos.controler;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 
 @Controller 
 
+@RequestMapping ("/clientes")
+
 public class ClienteController {
 
-        @GetMapping("/clientes")
-        @ResponseBody 
-        public String listarClientes() {
-            return "Clientes do Seu Bugnácio";
+        @GetMapping
+       
+        
+        public String listar(Model model) {
+            model.addAttribute("clientes", List.of());
+            return "clientes/lista";
         }
 
 
