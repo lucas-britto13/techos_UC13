@@ -1,4 +1,4 @@
-package br.com.bugnacio.techos.controler;
+package br.com.bugnacio.techos.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
