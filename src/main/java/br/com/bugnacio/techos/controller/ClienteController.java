@@ -38,4 +38,20 @@ public class ClienteController {
         // Abre: src/main/resources/templates/clientes/lista.html
         return "clientes/lista";
     }
+
+    // Get /clientes/novo: mostra o formulário para criar um novo "cliente".
+    @GetMapping("/novo")
+    public String novo(Model model) {
+    
+    // A tela clientes/form espera um objeto chamado "cliente".
+    // Mandamos um cliente VAZIO (new Cliente()).
+    // A tela mostra o "estado vazio". Na aula 5 esse cliente vem do banco. 
+    model.addAttribute("cliente", new Cliente());
+
+    // SEM @ResponseBody: o texto devolvido e o nome da tela. 
+    // Abre: src/main/resources/templates/clientes/form.html 
+    return "clientes/form";
+    }
+
+
 }
